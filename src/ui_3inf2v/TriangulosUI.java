@@ -6,6 +6,7 @@ package ui_3inf2v;
 
 import java.awt.Color;
 import java.util.HashSet;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -18,6 +19,7 @@ public class TriangulosUI extends javax.swing.JFrame {
      */
     public TriangulosUI() {
         initComponents();
+        setLocationRelativeTo(null);
     }
 
     /**
@@ -198,17 +200,23 @@ public class TriangulosUI extends javax.swing.JFrame {
     
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
 
-        double a = Math.abs(Double.parseDouble(jTextField1.getText()));
-        double b = Math.abs(Double.parseDouble(jTextField2.getText()));
-        double c = Math.abs(Double.parseDouble(jTextField3.getText()));
+        if (jTextField1.getText().equals("") || jTextField2.getText().equals("") || jTextField3.getText().equals("")) {
+            JOptionPane.showMessageDialog(null, "Preencha todos os lados", "Erro", JOptionPane.ERROR_MESSAGE);
+        } else {
+            double a = Math.abs(Double.parseDouble(jTextField1.getText()));
+            double b = Math.abs(Double.parseDouble(jTextField2.getText()));
+            double c = Math.abs(Double.parseDouble(jTextField3.getText()));
 
-        if (isTriangle(a,b,c)) {
-            tipoLabel.setText("Tipo = " + typeTriangle(a,b,c));
-            areaLabel.setText(String.format("Área = %.4f", areaTriangle(a,b,c)));
-       } else {
-            tipoLabel.setText("Não é um triângulo");
-            areaLabel.setText("");
+            if (isTriangle(a,b,c)) {
+                tipoLabel.setText("Tipo = " + typeTriangle(a,b,c));
+                areaLabel.setText(String.format("Área = %.4f", areaTriangle(a,b,c)));
+        } else {
+               tipoLabel.setText("Não é um triângulo");
+               areaLabel.setText("");
+            }
         }
+        
+        
         
     }//GEN-LAST:event_jButton1ActionPerformed
 
