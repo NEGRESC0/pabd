@@ -6,6 +6,16 @@ import java.util.logging.Logger;
 
 public class APPeBDframes {
 
+    /*
+    CÓDIGO PARA COMMIT NO GITHUB
+    
+    cd "C:\Users\20221074010005\OneDrive - IFRN\TRABALHOS\Banco de Dados\APPeBDframes"
+    git add .
+    git commit - m "comentário"
+    git push -u origin main
+    */
+    
+    
     public static void main(String[] args) throws SQLException {
 Connection con = null; //cria a connection
         
